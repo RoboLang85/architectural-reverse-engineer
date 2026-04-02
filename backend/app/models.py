@@ -123,6 +123,16 @@ class ReconciledModel(BaseModel):
     discrepancies: list[str] = Field(default_factory=list)  # differences between code and docs
 
 
+class ComponentModel(BaseModel):
+    """Model representing a single component's internal structure for LLD generation."""
+
+    name: str
+    classes: list[str] = Field(default_factory=list)
+    functions: list[str] = Field(default_factory=list)
+    data_transformations: list[str] = Field(default_factory=list)
+    data_flows: list[tuple[str, str]] = Field(default_factory=list)  # (source, target) internal flows
+
+
 # --- LeanIX Models ---
 
 
