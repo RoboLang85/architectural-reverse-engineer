@@ -1,5 +1,7 @@
 """Error hierarchy for the Architectural Reverse Engineer."""
 
+from __future__ import annotations
+
 
 class AnalyzerError(Exception):
     """Base error for all analyzer operations."""
