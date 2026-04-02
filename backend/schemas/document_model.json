@@ -1,0 +1,27 @@
+{
+  "title": "DocumentModel",
+  "description": "Extracted content from any supported document. Note: images are base64-encoded in JSON.",
+  "type": "object",
+  "properties": {
+    "source_path": {
+      "type": "string",
+      "description": "Path to the source document."
+    },
+    "file_type": {
+      "type": "string",
+      "description": "Type of the source document."
+    },
+    "text_content": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Extracted text content blocks."
+    },
+    "images": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Base64-encoded extracted images."
+    }
+  },
+  "required": ["source_path", "file_type", "text_content", "images"],
+  "additionalProperties": false
+}

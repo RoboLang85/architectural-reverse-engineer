@@ -1,0 +1,18 @@
+{
+  "title": "ValidationResult",
+  "description": "Result of JSON Schema validation.",
+  "type": "object",
+  "properties": {
+    "valid": {
+      "type": "boolean",
+      "description": "Whether the data passed validation."
+    },
+    "errors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of validation error messages."
+    }
+  },
+  "required": ["valid", "errors"],
+  "additionalProperties": false
+}

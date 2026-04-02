@@ -1,0 +1,31 @@
+{
+  "title": "DiagramOutput",
+  "description": "Output from diagram generation. Note: rendered_image is base64-encoded in JSON.",
+  "type": "object",
+  "properties": {
+    "diagram_type": {
+      "type": "string",
+      "enum": ["dependency_graph", "component", "uml_class", "uml_sequence", "lld"],
+      "description": "The type of diagram."
+    },
+    "rendered_image": {
+      "type": "string",
+      "description": "Base64-encoded rendered image (PNG or SVG)."
+    },
+    "image_format": {
+      "type": "string",
+      "enum": ["png", "svg"],
+      "description": "Format of the rendered image."
+    },
+    "structured_data": {
+      "type": "object",
+      "description": "JSON-serializable graph data."
+    },
+    "source_file": {
+      "type": ["string", "null"],
+      "description": "PlantUML source for UML diagrams, null otherwise."
+    }
+  },
+  "required": ["diagram_type", "rendered_image", "image_format", "structured_data"],
+  "additionalProperties": false
+}

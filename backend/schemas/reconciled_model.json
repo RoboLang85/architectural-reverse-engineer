@@ -1,0 +1,76 @@
+{
+  "title": "ReconciledModel",
+  "description": "Merged analysis from code and document sources.",
+  "type": "object",
+  "properties": {
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "element": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "element_type": { "type": "string" },
+              "metadata": { "type": "object" }
+            },
+            "required": ["name", "element_type", "metadata"],
+            "additionalProperties": false
+          },
+          "leanix_type": { "type": "string" },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "alternative_types": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": { "type": "string" },
+                "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+              },
+              "required": ["type", "confidence"]
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["element", "leanix_type", "confidence", "alternative_types", "evidence"],
+        "additionalProperties": false
+      },
+      "description": "Classified architectural elements."
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": { "type": "string" },
+          "target": { "type": "string" },
+          "relationship_type": { "type": "string" }
+        },
+        "required": ["source", "target", "relationship_type"],
+        "additionalProperties": false
+      },
+      "description": "Relationships between elements."
+    },
+    "patterns": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Detected architectural patterns."
+    },
+    "layers": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Detected architectural layers."
+    },
+    "discrepancies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Differences between code and documentation."
+    }
+  },
+  "required": ["elements", "relationships", "patterns", "layers", "discrepancies"],
+  "additionalProperties": false
+}
