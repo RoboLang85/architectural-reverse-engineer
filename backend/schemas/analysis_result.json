@@ -1,0 +1,47 @@
+{
+  "title": "AnalysisResult",
+  "description": "Result of AI-powered analysis of code or documents.",
+  "type": "object",
+  "properties": {
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "element_type": { "type": "string" },
+          "metadata": { "type": "object" }
+        },
+        "required": ["name", "element_type", "metadata"],
+        "additionalProperties": false
+      },
+      "description": "Discovered architectural elements."
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": { "type": "string" },
+          "target": { "type": "string" },
+          "relationship_type": { "type": "string" }
+        },
+        "required": ["source", "target", "relationship_type"],
+        "additionalProperties": false
+      },
+      "description": "Relationships between elements."
+    },
+    "patterns": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Detected architectural patterns."
+    },
+    "layers": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Detected architectural layers."
+    }
+  },
+  "required": ["elements", "relationships", "patterns", "layers"],
+  "additionalProperties": false
+}

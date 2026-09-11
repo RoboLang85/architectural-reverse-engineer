@@ -1,0 +1,17 @@
+{
+  "title": "StructuredOutput",
+  "description": "Union type for all JSON-serializable outputs.",
+  "type": "object",
+  "properties": {
+    "output_type": {
+      "type": "string",
+      "description": "The type of structured output."
+    },
+    "data": {
+      "type": "object",
+      "description": "The actual structured data."
+    }
+  },
+  "required": ["output_type", "data"],
+  "additionalProperties": false
+}

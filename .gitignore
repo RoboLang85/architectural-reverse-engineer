@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+packaging/.build_venv/
+
+# Node
+node_modules/
+frontend/build/
+
+# Build artifacts
+build/
+dist/
+*.dmg
+*.spec.bak
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Testing
+.hypothesis/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local analysis data / generated outputs
+work/
+output/
+outputs/
+*.log

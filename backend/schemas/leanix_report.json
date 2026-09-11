@@ -1,0 +1,53 @@
+{
+  "title": "LeanIXReport",
+  "description": "Complete LeanIX mapping report.",
+  "type": "object",
+  "properties": {
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "element_name": {
+            "type": "string",
+            "description": "Name of the architectural element."
+          },
+          "leanix_types": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": { "type": "string" },
+                "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+              },
+              "required": ["type", "confidence"]
+            },
+            "description": "Applicable LeanIX types ranked by confidence."
+          },
+          "evidence": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Evidence supporting the classification."
+          },
+          "relationships": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "target": { "type": "string" },
+                "relationship": { "type": "string" }
+              },
+              "required": ["target", "relationship"]
+            },
+            "description": "Relationships to other LeanIX objects."
+          }
+        },
+        "required": ["element_name", "leanix_types", "evidence", "relationships"],
+        "additionalProperties": false
+      },
+      "description": "List of element-to-LeanIX-type mappings."
+    }
+  },
+  "required": ["mappings"],
+  "additionalProperties": false
+}

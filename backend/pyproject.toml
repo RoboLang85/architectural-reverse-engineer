@@ -1,0 +1,31 @@
+[project]
+name = "architectural-reverse-engineer"
+version = "0.1.0"
+description = "AI-powered architectural reverse engineering tool"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "pydantic>=2.5.0",
+    "openai>=1.6.0",
+    "PyMuPDF>=1.23.0",
+    "python-docx>=1.1.0",
+    "graphviz>=0.20.0",
+    "plantuml>=0.3.0",
+    "jsonschema>=4.20.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "hypothesis>=6.92.0",
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

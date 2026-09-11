@@ -1,0 +1,58 @@
+{
+  "title": "CodebaseModel",
+  "description": "Complete parsed representation of a codebase.",
+  "type": "object",
+  "properties": {
+    "root_path": {
+      "type": "string",
+      "description": "Root path of the codebase."
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string" },
+          "language": { "type": "string" },
+          "imports": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "exports": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "public_interfaces": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["path", "language", "imports", "exports", "public_interfaces"],
+        "additionalProperties": false
+      },
+      "description": "Parsed source files."
+    },
+    "module_boundaries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "files": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "dependencies": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["name", "files", "dependencies"],
+        "additionalProperties": false
+      },
+      "description": "Logical module boundaries."
+    }
+  },
+  "required": ["root_path", "files", "module_boundaries"],
+  "additionalProperties": false
+}

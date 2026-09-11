@@ -1,0 +1,30 @@
+{
+  "title": "ADR",
+  "description": "Architectural Decision Record.",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the architectural decision."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["Proposed", "Accepted", "Deprecated", "Superseded"],
+      "description": "Current status of the ADR."
+    },
+    "context": {
+      "type": "string",
+      "description": "Context and background for the decision."
+    },
+    "decision": {
+      "type": "string",
+      "description": "The architectural decision made."
+    },
+    "consequences": {
+      "type": "string",
+      "description": "Consequences of the decision."
+    }
+  },
+  "required": ["title", "status", "context", "decision", "consequences"],
+  "additionalProperties": false
+}
